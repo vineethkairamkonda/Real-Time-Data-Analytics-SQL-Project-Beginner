@@ -56,6 +56,8 @@ SELECT
 FROM user_submissions
 GROUP BY username
 ORDER BY total_submissions DESC;
+
+
 Q2: Calculate the Daily Average Points for Each User
 SELECT 
     TO_CHAR(submitted_at, 'DD-MM') AS day,
@@ -64,6 +66,8 @@ SELECT
 FROM user_submissions
 GROUP BY 1, 2
 ORDER BY username;
+
+
 Q3: Find the Top 3 Users with the Most Correct Submissions for Each Day
 WITH daily_submissions AS (
     SELECT 
@@ -87,6 +91,8 @@ SELECT
     correct_submissions
 FROM users_rank
 WHERE rank <= 3;
+
+
 Q4: Find the Top 5 Users with the Highest Number of Incorrect Submissions
 SELECT 
     username,
@@ -98,6 +104,8 @@ SELECT
 FROM user_submissions
 GROUP BY 1
 ORDER BY incorrect_submissions DESC;
+
+
 Q5: Find the Top 10 Performers for Each Week
 SELECT *  
 FROM (
@@ -111,5 +119,7 @@ FROM (
     ORDER BY week_no, total_points_earned DESC
 )
 WHERE rank <= 10;
+
+
 Conclusion
 This project provides an excellent opportunity for beginners to apply their SQL knowledge to solve practical data problems. By working through these SQL queries, you'll gain hands-on experience with data aggregation, ranking, date manipulation, and conditional logic.
